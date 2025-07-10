@@ -1,0 +1,27 @@
+# meta.yaml
+---
+title: "Ritmos Irregulares"
+subtitle: "Claves para la música nuestra"
+author: "Judith de León y Santiago Chávez Novaro"
+date: "Julio de 2025"
+lang: "es"
+documentclass: article
+pdf-engine: "lualatex"
+fontsize: "12pt"
+classoption: "twoside"
+header-includes:
+  - \usepackage{graphicx}
+  - \usepackage{fancyhdr}
+  - \usepackage{hyperref}
+  - \hypersetup{
+      colorlinks=true,
+      linkcolor=brown,
+      filecolor=red,
+      urlcolor=green,
+      pdftitle={Ritmos Irregulares},
+      pdfpagemode=FullScreen,
+    }
+toc: true
+toc-depth: 2
+toc-title: "Índice"
+---

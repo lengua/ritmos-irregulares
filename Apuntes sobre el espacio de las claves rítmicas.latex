@@ -1,0 +1,295 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Apuntes sobre el espacio de las claves},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Apuntes sobre el espacio de las claves}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{quote}
+---
+
+6 de mayo de 2025
+\end{quote}
+
+\hypertarget{el-grupo-de-las-claves}{%
+\section{El grupo de las claves}\label{el-grupo-de-las-claves}}
+
+\begin{quote}
+La aritmética en S := Z\textsuperscript{2} = \{0\emph{,} 1\} será el
+modelo básico de las claves:
+
+0 + 0 = 0
+
+0 + 1 = 1
+
+1 + 0 = 1
+
+1 + 1 = 0
+
+Dado un número \emph{r} ∈ N, una \emph{clave de longitud r} es un
+vector:
+
+\emph{k}¯ = (\emph{k}\textsubscript{0}\emph{, . . . ,
+k\textsubscript{r}}\textsubscript{−1}) ∈ S\emph{\textsuperscript{r}.}
+
+Para cada \emph{r} ∈ N, está definida la siguiente operación:
+
+⊕ : S\emph{\textsuperscript{r}} × S\emph{\textsuperscript{r}} →
+S\emph{\textsuperscript{r}}
+
+\emph{m}¯ ⊕ \emph{n}¯ = (\emph{m}\textsubscript{0} +
+\emph{n}\textsubscript{0}\emph{, . . . ,
+m\textsubscript{r}}\textsubscript{−1} +
+\emph{n\textsubscript{r}}\textsubscript{−1})
+\end{quote}
+
+Para cualesquiera \emph{m}¯ y \emph{n}¯ ∈ S\emph{\textsuperscript{r}}.
+
+\begin{quote}
+Esta operación es conmutativa, el neutro es ¯0 = (0\emph{, . . . ,} 0) y
+para toda \emph{m} ∈ S\emph{\textsuperscript{r}} el
+\end{quote}
+
+inverso es −\emph{m}¯ = \emph{m}¯ .
+
+Esta definición no permite sumar claves de diferentes longitudes. Sin
+embargo, podemos definir una serie de \emph{encajes} para poder operar
+claves de distintas longitudes.
+
+\begin{quote}
+Dado \emph{q} ∈ N, podemos definir el encaje básico de S en
+S\emph{\textsuperscript{q}}, en la primera coordenada:
+
+\emph{j}\textsubscript{1\emph{,q}} : S → S\emph{\textsuperscript{q}}
+
+\emph{j}\textsubscript{1\emph{,q}}(\emph{k}) = (\emph{k,} 0\emph{, . . .
+,} 0) ∈ S\emph{\textsuperscript{q}}
+\end{quote}
+
+Y con esto definir, de manera general, para \emph{p} y \emph{q} ∈ N:
+
+\begin{quote}
+\emph{jp,q} : S\emph{p} → S\emph{pq}
+
+\emph{j\textsubscript{p,q}}(\emph{k}) =
+(\emph{j}\textsubscript{1\emph{,q}}(\emph{k}\textsubscript{0})\emph{, .
+. . ,
+j}\textsubscript{1\emph{,q}}(\emph{k\textsubscript{p}}\textsubscript{−1}))
+∈ S\emph{\textsuperscript{q}}
+
+Observe que si \emph{p \textless{} q \textless{} r}, entonces:
+
+\emph{jp,r} = \emph{jp,q} ◦ \emph{jq,r}? (1)
+\end{quote}
+
+\textbf{Nota:} Debe haber algunas propiedades más, consecuencias de la
+divisibilidad de \emph{p} y \emph{q}.
+
+\begin{quote}
+Esta familia de encajes nos permite extender la operación ⊕ a K := ∪∞
+S\emph{\textsuperscript{r}}. Dados
+\end{quote}
+
+cualesquiera \emph{p} y \emph{q} ∈ N, define:
+
+\begin{quote}
+⊕ : S\emph{\textsuperscript{p}} × S\emph{\textsuperscript{q}} →
+S\emph{\textsuperscript{pq}}
+
+\emph{m}¯ ⊕ \emph{n}¯ = \emph{j\textsubscript{p,q}}(\emph{m}¯ ) ⊕
+\emph{j\textsubscript{q,p}}(\emph{n}¯)
+\end{quote}
+
+Sin embargo, hay un problema, pues el elemento neutro no es único. Hay
+ceros de todas las longitudes posibles. Es necesario definir una
+relación de equivalencia, que considere: (0) ∼ (0\emph{, . . . ,} 0).
+
+\textbf{Teorema:} Decimos que \emph{m}¯ y \emph{n}¯ ∈ K, de longitudes
+\emph{p} y \emph{q}, respectivamente, son equiva-
+
+lentes si: ``Una es la imagen de la otra por alguno de los encajes
+\emph{j}'', es decir, si \emph{p} ≤ \emph{q}, entonces, debe suceder que
+\emph{q} = \emph{rp}, con \emph{r} ≥ 1 y que
+\emph{j\textsubscript{p,r}}(\emph{m}¯ ) = \emph{n}¯. Esta relación es
+una relación de equivalencia.
+
+\emph{Demostración:} Esta relación es reflexiva (\emph{r} = 1),
+simétrica, pues la definición de equi- valencia considera la clave de
+longitud menor en el espacio mayor. La transitividad es consecuencia de
+(1).
+
+Consideremos entonces el conjunto K/\textsubscript{∼} determinado por
+todas las clases de equi- valencia definidas por esta relación.
+
+\textbf{Teorema:} K/\textsubscript{∼} es un grupo conmutativo con la
+operación ⊕.
+
+\emph{Demostración:} Es cerrada, el neutro es la clase del (0) y tiene
+inversos, ¿es asociativa:
+
+(\emph{m}¯ ⊕ \emph{n}¯) + \emph{s}¯ = \emph{m}¯ ⊕ (\emph{n}¯ +
+\emph{s}¯)? \ldots{}
+
+\begin{quote}
+Cada elemento tiene asociado algo parecido a un grado, que es la
+longitud. Es decir,
+\end{quote}
+
+el grado de \emph{m}¯ es grado(\emph{m}¯ ) := \emph{p} ≥ 1 si \emph{m}¯
+∈ S\emph{\textsuperscript{p}}.
+
+\begin{quote}
+Con esta definición se cumple que:
+
+grado(\emph{m}¯ ⊕ \emph{n}¯) = grado(\emph{m}¯ )grado(\emph{n}¯)
+\end{quote}
+
+Sin embargo, el grado de (0) no es 0. Además, esta definición no se
+extiende a las clases de equivalencia. Quizás, se debe definir el grado
+de una clase como el menor grado de cualquiera de sus representantes.
+
+\hypertarget{polinomios-con-coeficientes-en-z2}{%
+\section{\texorpdfstring{Polinomios con coeficientes en
+Z\textsuperscript{2}}{Polinomios con coeficientes en Z2}}\label{polinomios-con-coeficientes-en-z2}}
+
+\begin{quote}
+Un polinomio con coeficientes en Z\textsuperscript{2} está definido por
+\emph{a\textsubscript{i}} ∈ Z\textsuperscript{2}, con \emph{i} ∈
+\{0\emph{, . . . , d}\}
+\end{quote}
+
+de la siguiente manera:
+
+\begin{quote}
+\emph{f} (\emph{x}) = ∑ \emph{a\textsubscript{i}x\textsuperscript{i}}
+
+\emph{i}=0
+\end{quote}
+
+Es interesante anotar que si los polinomios no tienen coeficiente de
+grado cero, tienen exactamente la misma estructura que
+S\emph{\textsuperscript{d}}, para algún \emph{d} ≥ 1.
+
+\begin{quote}
+De hecho:
+
+⊕ Z\textsubscript{2} → \emph{a}\textsubscript{1}\emph{x} +
+\emph{a}\textsubscript{2}\emph{x}\textsuperscript{2} + · · ·
+\emph{a\textsubscript{d}x\textsuperscript{d}}
+
+\emph{i}=1
+\end{quote}
+
+tiene la misma estructura que K, con la convención natural de la suma
+directa en los polinomios de que, a partir de cierto índice, todos los
+coeficientes son 0.
+
+\hypertarget{permutaciones}{%
+\section{Permutaciones}\label{permutaciones}}
+
+El grupo de permutaciones, o grupo simétrico, de orden \emph{n} ∈ N,
+denotado por \emph{S\textsubscript{n}} está definido por todas las
+funciones biyectivas de un conjunto con \emph{n} elementos y cuya
+operación es la composición. Este grupo actúa en
+S\emph{\textsuperscript{n}}, es decir, existe una función:
+
+\begin{quote}
+Φ : \emph{S\textsubscript{n}} × S\emph{\textsuperscript{n}} →
+S\emph{\textsuperscript{n}}
+
+Φ(\emph{σ, m}¯ ) = (\emph{m\textsubscript{σ}−}1(0)\emph{, . . . ,
+m\textsubscript{σ}−}1(\emph{n}−1))
+\end{quote}
+
+\textbf{Nota:} Lo definí usando la inversa de sigma, para que la
+rotación:
+
+\begin{quote}
+0 1 ··· \emph{n}−2 \emph{n}−1
+
+1 2 ··· \emph{n}−1 0
+\end{quote}
+
+gire la clave hacia la derecha. Es decir, la clave (1\emph{,} 0\emph{,}
+0\emph{,} 0\emph{,} 0) \textquotesingle→ (0\emph{,} 1\emph{,} 0\emph{,}
+0\emph{,} 0), y no
+
+\begin{quote}
+(1\emph{,} 0\emph{,} 0\emph{,} 0\emph{,} 0) \textquotesingle→ (0\emph{,}
+0\emph{,} 0\emph{,} 0\emph{,} 1), que sospecho, va mejor con la
+intuición.
+\end{quote}
+
+\hypertarget{concatenaciuxf3n}{%
+\section{Concatenación}\label{concatenaciuxf3n}}
+
+La segunda operación interesante es la concatenación de claves. Dados
+\emph{m}¯
+
+\emph{n}¯ ∈ S\emph{\textsuperscript{q}}, podemos definir dos claves
+diferentes en S\textsuperscript{\emph{p}+\emph{q}} de la siguiente
+manera:
+
+\begin{quote}
+∈ S\emph{\textsuperscript{p}} y
+
+\emph{m}¯ ∧ \emph{n}¯ := (\emph{m}\textsubscript{0}\emph{, . . . ,
+m\textsubscript{p}}\textsubscript{−1}\emph{, n}\textsubscript{0}\emph{,
+. . . , n\textsubscript{q}}\textsubscript{−1})\emph{.}
+\end{quote}
+
+Esta operación no es conmutativa, no tiene neutro, ni inversos, pero si
+es asociativa. Es interesante decir algo sobre como se comporta con las
+clases de equivalencia antes definidas.
+
+\end{document}
